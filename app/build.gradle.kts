@@ -74,4 +74,7 @@ dependencies {
     implementation("androidx.compose.runtime:runtime-livedata:1.6.6")
     implementation("io.coil-kt:coil-compose:2.6.0")
 
+
+    implementation ("com.google.accompanist:accompanist-permissions:0.23.0")
+    implementation ("com.google.android.gms:play-services-location:18.0.0")
 }

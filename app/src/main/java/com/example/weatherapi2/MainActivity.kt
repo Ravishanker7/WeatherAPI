@@ -14,6 +14,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.lifecycle.ViewModelProvider
+import com.example.weatherapi2.Currentlocation.GetCurrentLocation
 import com.example.weatherapi2.api.weatherui
 import com.example.weatherapi2.ui.theme.WeatherAPI2Theme
 
@@ -29,7 +30,11 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    weatherui(viewModel = weatherViewModel)
+                    val location= GetCurrentLocation()
+                    location?.let{
+                        Text(text = "Lat: ${it.latitude}, Lon: ${it.longitude}")
+                    }
+                   weatherui(viewModel = weatherViewModel)
                 }
             }
         }
